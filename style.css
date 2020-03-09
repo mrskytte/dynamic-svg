@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .square {
   --left: 0%;
   --top: 0%;
@@ -8,4 +12,11 @@
   background-color: var(--color);
   left: var(--left);
   top: var(--top);
+}
+
+#circles circle {
+  --color: red;
+  fill: var(--color);
+  stroke: 4px black;
+  mix-blend-mode: soft-light;
 }
