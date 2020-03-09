@@ -60,7 +60,7 @@ function createRandomSquare() {
     "http://www.w3.org/2000/svg",
     "circle"
   );
-  circle.setAttribute("r", "50");
+  circle.style.r = "50px";
   circle.style.setProperty("fill", assignRandomColor());
   assignRandomPosition(circle);
   return circle;
@@ -80,11 +80,11 @@ function assignRandomColor() {
 }
 
 function assignRandomPosition(thisSquare) {
-  thisSquare.setAttribute("cx", randomPositionValue());
-  thisSquare.setAttribute("cy", randomPositionValue());
+  thisSquare.style.setProperty("--x", randomPositionValue());
+  thisSquare.style.setProperty("--y", randomPositionValue());
 
   function randomPositionValue() {
     const value = Math.floor(Math.random() * 640);
-    return `${value}`;
+    return `${value}px`;
   }
 }

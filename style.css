@@ -17,6 +17,13 @@
 #circles circle {
   --color: red;
   fill: var(--color);
-  stroke: 4px black;
+  stroke: black;
+  stroke-width: 4px;
   mix-blend-mode: soft-light;
+  cx: var(--x);
+  cy: var(--y);
+}
+
+svg {
+  width: 50%;
 }
