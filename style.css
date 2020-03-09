@@ -1,7 +1,11 @@
 .square {
+  --left: 0%;
+  --top: 0%;
+  --color: aquamarine;
   position: absolute;
   width: 3rem;
   height: 3rem;
-  background-color: aquamarine;
-  left: 5%;
+  background-color: var(--color);
+  left: var(--left);
+  top: var(--top);
 }

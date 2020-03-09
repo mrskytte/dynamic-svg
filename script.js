@@ -7,17 +7,18 @@ function init() {
 }
 
 function createSquares() {
+  const body = document.querySelector("body");
   for (let i = 0; i < 40; i++) {
-    const square = document.querySelector("template").content;
-    const copiedSquare = square.cloneNode(true);
-
-    copiedSquare.querySelector(
-      ".square"
-    ).style.backgroundColor = assignRandomColor();
-    assignRandomPosition(copiedSquare);
-
-    document.querySelector("body").appendChild(copiedSquare);
+    body.appendChild(createRandomSquare());
   }
+}
+
+function createRandomSquare() {
+  const square = document.createElement("div");
+  square.classList.add("square");
+  square.style.setProperty("--color", assignRandomColor());
+  assignRandomPosition(square);
+  return square;
 }
 
 function assignRandomColor() {
@@ -34,8 +35,8 @@ function assignRandomColor() {
 }
 
 function assignRandomPosition(thisSquare) {
-  thisSquare.querySelector(".square").style.left = randomPositionValue();
-  thisSquare.querySelector(".square").style.top = randomPositionValue();
+  thisSquare.style.setProperty("--left", randomPositionValue());
+  thisSquare.style.setProperty("--top", randomPositionValue());
 
   function randomPositionValue() {
     const value = Math.floor(Math.random() * 95);
